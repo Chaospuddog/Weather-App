@@ -5,6 +5,9 @@
   margin: 0;
   box-sizing: border-box;
 }
+[hidden] {
+  display: none !important;
+}
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background: #ffffff;
@@ -12,6 +15,9 @@ body {
 nav {
   position: sticky;
   top: 0px;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
 }
 nav ul {
   display: flex;
@@ -49,6 +55,50 @@ nav img {
 }
 .cityInfo {
   padding: 0 0 0.5rem 0.5rem;
+}
+.citySearch input {
+  border: none;
+  height: 2rem;
+  font-size: 1rem;
+  flex-basis: 75%;
+}
+.cityMenuButton {
+  border: 2px solid black;
+  height: 2rem;
+  font-size: 1rem;
+  padding: 0 0.25rem 0 0.25rem;
+  background: #ddd;
+  color: black;
+}
+.searchButton {
+  flex-basis: 25%;
+  border: none;
+}
+.cityMenu {
+  position: absolute;
+  top: 4rem;
+  border: 1px solid black;
+  background: #ddd;
+  display: flex;
+  flex-flow: row wrap;
+}
+.cityMenu ul {
+  list-style: none;
+  flex-basis: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  height: 100%;
+}
+.cityMenu li {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+}
+.cityButton {
+  flex-basis: 100%;
+  border-radius: 0;
+  border: none;
+  background: white;
 }
 .weatherCard {
   padding: 1.5rem;

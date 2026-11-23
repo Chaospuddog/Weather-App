@@ -27,6 +27,9 @@ const lowestTemp = document.querySelector(".lowest");
 const weatherDescription = document.querySelector(".weatherDescription");
 const weatherIcon = document.querySelector(".weatherIcon");
 
+const cityMenuBtn = document.querySelector(".cityMenuButton");
+cityMenuBtn.textContent = location;
+
 updateWeather(weatherData);
 
 function updateWeather(weatherData) {
@@ -82,12 +85,13 @@ function updateWeather(weatherData) {
   }
 }
 
-const searchBtn = document.querySelector(".citySearch button");
+const searchBtn = document.querySelector(".searchButton");
 const searchUser = document.querySelector(".citySearch input");
 searchBtn.addEventListener("click", async () => {
   location = searchUser.value;
   weatherData = await getWeather(location);
   updateWeather(weatherData);
+  cityMenu.setAttribute("hidden", true);
 });
 searchUser.addEventListener("keyup", async (e) => {
   const keyName = e.key;
@@ -95,5 +99,17 @@ searchUser.addEventListener("keyup", async (e) => {
     location = searchUser.value;
     weatherData = await getWeather(location);
     updateWeather(weatherData);
+    cityMenu.setAttribute("hidden", true);
+  }
+});
+
+const cityBtn = document.querySelector(".cityMenuButton");
+const cityMenu = document.querySelector(".cityMenu");
+
+cityBtn.addEventListener("click", () => {
+  if (cityMenu.hasAttribute("hidden")) {
+    cityMenu.removeAttribute("hidden");
+  } else {
+    cityMenu.setAttribute("hidden", true);
   }
 });
