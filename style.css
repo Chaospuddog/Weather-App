@@ -1,0 +1,91 @@
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: #ffffff;
+}
+nav {
+  position: sticky;
+  top: 0px;
+}
+nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  list-style: none;
+}
+nav img {
+  height: 5rem;
+}
+.city {
+  background: #0f172a;
+  color: white;
+  border: none;
+  border-radius: 1rem;
+  font-size: 1.5rem;
+}
+.city::before {
+  content: url("./media/maps-arrow-diagonal.svg");
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.city::after {
+  content: url("./media/nav-arrow-down.svg");
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 100%;
+}
+.weatherMain {
+  padding: 2rem;
+}
+.cityInfo {
+  padding: 0 0 0.5rem 0.5rem;
+}
+.weatherCard {
+  padding: 1.5rem;
+  border: 1px solid black;
+  border-radius: 2rem;
+  background: url("./media/cloudyWeatherBackground.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: white;
+}
+.cardTop {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+h2 {
+  font-size: 5.5rem;
+}
+.cardRight {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+.cardRight img {
+  height: 7rem;
+}
+.cardBottom ul {
+  list-style: none;
+  display: flex;
+  gap: 0.5rem;
+}
+.cardBottom li:not(:last-child)::after {
+  content: "";
+  display: inline-block;
+  width: 2px;
+  height: 0.7em;
+  background: white;
+  margin-left: 0.25rem;
+}

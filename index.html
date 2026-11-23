@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><img src="./media/logoBright.svg" alt="Weather app" /></li>
+        <li><button class="city" type="button" hidden>Łódź</button></li>
+      </ul>
+      <div class="citySearch">
+        <input type="search" />
+        <button type="button">search</button>
+      </div>
+    </nav>
+    <main class="weatherMain">
+      <div class="cityInfo">
+        <h1></h1>
+        <p></p>
+      </div>
+      <div class="weatherCard">
+        <div class="cardTop">
+          <div class="cardLeft">
+            <h2>999&deg;</h2>
+          </div>
+          <div class="cardRight">
+            <img class="weatherIcon" src="./media/cloud.svg" />
+            <p class="weatherDescription">Przeważnie pochmurnie</p>
+          </div>
+        </div>
+        <div class="cardBottom">
+          <ul>
+            <li class="feelsLike">Odczuwalna 999&deg;</li>
+            <li class="highest">Najwyższa 999&deg;</li>
+            <li class="lowest">Najniższa 999&deg;</li>
+          </ul>
+          <span class="rainProbability"></span>
+        </div>
+      </div>
+    </main>
+    <div class="wide black"></div>
+    <div class="wide"></div>
+    <script type="module" src="script.js"></script>
+  </body>
+</html>
