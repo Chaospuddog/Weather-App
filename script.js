@@ -23,6 +23,8 @@ const currentTemp = document.querySelector(".cardLeft h2");
 const feelsLike = document.querySelector(".feelsLike");
 const highestTemp = document.querySelector(".highest");
 const lowestTemp = document.querySelector(".lowest");
+const windSpeed = document.querySelector(".windSpeed");
+const rainProbability = document.querySelector(".rainProbability");
 
 const weatherDescription = document.querySelector(".weatherDescription");
 const weatherIcon = document.querySelector(".weatherIcon");
@@ -39,6 +41,8 @@ function updateWeather(weatherData) {
   currentTemp.textContent = `${weatherData.currentConditions.temp}\u00B0C`;
   cityDetails.textContent = `${weatherData.resolvedAddress}`;
   cityMessage.textContent = `Pogoda ${weatherData.address}`;
+  rainProbability.textContent = `Prawdopodobieństwo opadów: ${weatherData.currentConditions.precipprob}%`;
+  windSpeed.textContent = `Prędkość wiatru: ${weatherData.currentConditions.windspeed}km/h`;
 
   if (weatherData.currentConditions.icon === "rain") {
     weatherIcon.src = "./media/rain.svg";
@@ -86,7 +90,7 @@ function updateWeather(weatherData) {
 }
 
 const searchBtn = document.querySelector(".searchButton");
-const searchUser = document.querySelector(".citySearch input");
+const searchUser = document.querySelector(".citySearchWrapper input");
 searchBtn.addEventListener("click", async () => {
   location = searchUser.value;
   weatherData = await getWeather(location);
@@ -112,4 +116,27 @@ cityBtn.addEventListener("click", () => {
   } else {
     cityMenu.setAttribute("hidden", true);
   }
+});
+
+const lodzBtn = document.querySelector("#lodz");
+const ntBtn = document.querySelector("#nowyTarg");
+const bielskoBtn = document.querySelector("#bielskobiala");
+
+ntBtn.addEventListener("click", async () => {
+  location = "Nowy Targ, Polska";
+  weatherData = await getWeather(location);
+  updateWeather(weatherData);
+});
+
+bielskoBtn.addEventListener("click", async () => {
+  location = "Bielsko-Biała, Polska";
+  weatherData = await getWeather(location);
+  updateWeather(weatherData);
+  console.log(weatherData.address);
+});
+
+lodzBtn.addEventListener("click", async () => {
+  location = "Łódź, Polska";
+  weatherData = await getWeather(location);
+  updateWeather(weatherData);
 });

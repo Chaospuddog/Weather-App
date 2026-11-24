@@ -12,10 +12,14 @@
         <li><img src="./media/logoBright.svg" alt="Weather app" /></li>
         <li><button class="city" type="button" hidden>Łódź</button></li>
       </ul>
-      <div class="citySearch">
+      <div class="citySearchWrapper">
         <button type="button" class="cityMenuButton">AktualneMiasto</button>
         <div class="cityMenu" hidden>
-          <input type="search" class="citySearch" />
+          <input
+            type="search"
+            class="citySearch"
+            placeholder="Funkcja niedokonczona :c"
+          />
           <button type="button" class="searchButton">Wyszukaj</button>
           <ul>
             <li><button class="cityButton">Miasto 1</button></li>
@@ -24,6 +28,13 @@
           </ul>
         </div>
       </div>
+      <ul class="favoriteCities">
+        <li><button type="button" id="lodz">Łódź</button></li>
+        <li><button type="button" id="nowyTarg">Nowy Targ</button></li>
+        <li>
+          <button type="button" id="bielskobiala">Bielsko-biała</button>
+        </li>
+      </ul>
     </nav>
     <main class="weatherMain">
       <div class="cityInfo">
@@ -46,12 +57,13 @@
             <li class="highest">Najwyższa 999&deg;</li>
             <li class="lowest">Najniższa 999&deg;</li>
           </ul>
-          <span class="rainProbability"></span>
+          <p class="rainProbability">lol</p>
+          <p class="windSpeed"></p>
         </div>
       </div>
     </main>
-    <div class="wide black"></div>
     <div class="wide"></div>
+    <div class="wide black"></div>
     <script type="module" src="script.js"></script>
   </body>
 </html>
